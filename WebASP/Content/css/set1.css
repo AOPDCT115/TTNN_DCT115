@@ -1,3 +1,4 @@
+
 @font-face {
 	font-weight: normal;
 	font-style: normal;
@@ -1010,12 +1011,13 @@ figure.effect-zoe:hover p.icon-links a:focus {
 }
 
 figure.effect-zoe p.description {
+    padding-right: 10px;
 	position: absolute;
-	bottom: 8em;
-	padding: 2em;
-	color: #000000;
+  	bottom: 8em;
+	padding: 10px;
+	color: #fff;
 	text-transform: none;
-	font-size: 90%;
+	font-size: 100%;
 	opacity: 0;
 	-webkit-transition: opacity 0.35s;
 	transition: opacity 0.35s;
@@ -1155,4 +1157,33 @@ figure.effect-chico:hover p {
 		margin: 10px auto;
 		width: 100%;
 	}
+}
+
+
+
+
+.grid figure p {
+    padding-right: 10px;
+    background-color: rgba(147,145,143,0.7);
+}
+
+figure.effect-zoe p.description {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 480px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    left: 0px;
+}
+figure.effect-zoe figcaption {
+	top: auto;
+	bottom: 0;
+	padding: 0em;
+	height: 2em;
+	background: #fff;
+	color: #3c4a50;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(0,100%,0);
+	transform: translate3d(0,100%,0);
 }
