@@ -11,6 +11,13 @@ namespace WebASP.DAL
     public class DataContext : DbContext
     {
         public DbSet<TypeCourse> TypeCourse { get; set; }
+        public DbSet<Course> Course { get; set; }
+        public DbSet<Special_TypeCourse> Special_TypeCourse { get; set; }
+        public DbSet<Class> Class { get; set; }
+        public DbSet<Instructor> Instructor { get; set; }
+        public DbSet<Register> Register { get; set; }
+        public DbSet<Schedule> Schedule { get; set; }
+        public DbSet<Student> Student { get; set; }
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{

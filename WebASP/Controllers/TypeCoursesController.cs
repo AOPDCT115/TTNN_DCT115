@@ -20,8 +20,22 @@ namespace WebASP.Controllers
         {
             return View(db.TypeCourse.ToList());
         }
+        public ActionResult XemThem(int MaKH)
+        {
+            TypeCourse typecourse = db.TypeCourse.SingleOrDefault(n => n.TypeCourseID == MaKH);
+            if (typecourse == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            List<Course> course = db.Course.Where(n => n.TypeCourseID == MaKH).ToList();
+            if (course.Count == 0)
+            {
+                ViewBag.Course = "Lỗi";
+            }
 
-
-
+            ViewBag.special_typecourse = db.Special_TypeCourse.Where(n => n.TypeCourseID == MaKH).ToList();
+            return View(course);
+        }
     }
 }
