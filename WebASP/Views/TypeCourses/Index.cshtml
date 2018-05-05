@@ -27,7 +27,11 @@
                     <h3>@item.TypeName</h3>
                     <p>@item.Introduce</p>
                     <br />
-                    <a href="">Xem thêm</a>
+                    <h4>
+                        @Html.ActionLink("Xem thêm", "XemThem", new { @MaKH = item.TypeCourseID }) |
+                        @Html.ActionLink("Đăng ký", "DangKy", new { @MaKH = item.TypeCourseID }) |
+                        @Html.ActionLink("Xem lịch học", "XemLichHoc", new { @MaKH = item.TypeCourseID })
+                    </h4>
                 </div>
             </div>
         </div>

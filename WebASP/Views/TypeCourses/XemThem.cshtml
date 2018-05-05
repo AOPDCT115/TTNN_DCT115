@@ -1,0 +1,81 @@
+﻿@using WebASP.Models
+
+@model List<Course>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="text-center">
+                <h2>ĐIỂM ĐẶC BIỆT CỦA KHÓA HỌC</h2>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+
+@{
+    int i = 0;
+
+<div class="container">
+    <div class="row">
+        <div class="box">
+
+            @foreach (var item in (List<Special_TypeCourse>)ViewBag.special_typecourse)
+            {
+                i++;
+                <div class="col-md-4">
+                <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                    <div class="icon">
+                        <i class="fa fa-heart-o fa-3x"></i>
+                    </div>
+                    <h4>@item.SpecialName</h4>
+                    <p>@item.Content</p>
+                </div>
+                </div>
+                if (i % 3 == 0)
+                {
+                    <div style="clear:both"></div>
+                }
+            }
+
+        </div>
+    </div>
+</div>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="text-center">
+                <h2>CHƯƠNG TRÌNH HỌC</h2>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+
+@foreach (var item in Model)
+{
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 style="background-image: url(../@item.UrlImg); height: 300px; "></h3>
+                    </div>
+                    <div class="col-md-6">
+                        <div style="text-align:center; font-size:19px">
+                            <h3>@item.Name</h3>
+                            @item.Introduce<br />
+                        </div>
+                        <div style="text-align:left; font-size:19px">
+                            <h4>Số bài học: @item.NumofLesson </h4>
+                            <h4>Học phí: @String.Format("{0:0,0}", item.Price) VNĐ</h4>
+                            <h4>Lịch học: từ @item.DateStart đến @item.DateFinish</h4>
+                            <h4>
+                                @Html.ActionLink("Đăng ký", "DangKy", new { @MaK = item.CourseID }) |
+                                @Html.ActionLink("Xem lịch học", "XemLichHoc", new { @MaK = item.CourseID })
+                            </h4>
+                       </div>
+                    </div>
+                </div>
+            </div>
+}
