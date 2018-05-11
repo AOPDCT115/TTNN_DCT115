@@ -18,6 +18,11 @@ namespace WebASP.DAL
         public DbSet<Register> Register { get; set; }
         public DbSet<Schedule> Schedule { get; set; }
         public DbSet<Student> Student { get; set; }
+        public DbSet<Menu> Menu { get; set; }
+        public DbSet<UserGroup> UserGroup { get; set; }
+        public DbSet<Role> Role { get; set; }
+        public DbSet<Credential> Credential { get; set; }
+        public DbSet<Feedback> Feedback { get; set; }
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{

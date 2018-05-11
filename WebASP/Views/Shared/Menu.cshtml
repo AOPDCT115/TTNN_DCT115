@@ -1,0 +1,75 @@
+﻿@using WebASP.Common
+@using WebASP.Models
+
+@model IEnumerable<WebASP.Models.Menu>
+
+@{
+    var session = (UserLogin)Session[CommonConstants.USER_SESSION];
+}
+
+    @if (session == null)
+    {
+        foreach (var item in Model)
+        {
+            if (item.Child < 1)
+            {
+                <li role="presentation">
+                    <a href="~/@item.Link">@item.Target</a>
+                </li>
+            }
+            if (item.Child == 1)
+            {
+                <li role="presentation">
+                    <a href="~/@item.Link">@item.Target</a>
+                        <ul class="sub-menu">
+                       @foreach (var items in (List<TypeCourse>)ViewBag.chuongtrinhdaotao1)
+                        {
+                            <li role="presentation"> <a href="~/TypeCourses/XemThem?MaKH=@items.TypeCourseID">@items.TypeName</a></li>
+                       }
+                        </ul>
+                    
+                </li>
+            }
+        }
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+
+            var i = item.Child;
+
+            if (item.Child == 0)
+            {
+                <li role="presentation">
+                    <a href="~/@item.Link">@item.Target</a>
+                </li>
+            }
+            if (item.Child == 1)
+            {
+                <li role="presentation">
+                    <a href="~/@item.Link">@item.Target</a>
+
+                    <ul class="sub-menu">
+                        @foreach (var items in (List<TypeCourse>)ViewBag.chuongtrinhdaotao1)
+                        {
+                            <li role="presentation"> <a href="~/TypeCourses/XemThem?MaKH=@items.TypeCourseID">@items.TypeName</a></li>
+                        }
+                    </ul>
+
+                </li>
+            }
+            if (item.Child < 0)
+            {
+                <li role="presentation">
+                    <a>@session.UserName</a>
+
+                    <ul class="sub-menu">
+                            <li role="presentation">@Html.ActionLink("Thoát", "Logout", "User")</li>
+                    </ul>
+
+                </li>
+            }
+
+        }
+    }

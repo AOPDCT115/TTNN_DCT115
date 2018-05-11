@@ -32,7 +32,6 @@
     <![endif]-->
 </head>
 <body>
-
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -45,30 +44,40 @@
                 </button>
                 <a class="navbar-brand" href="~/Home/Index"><span>TVV</span></a>
             </div>
+
             <div class="navbar-collapse collapse">
+               
                 <div class="menu">
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation"> <a href="~/Home/Index">Trang Chủ</a></li>
+
+                        @{ Html.RenderAction("Menu", "Home");}
+
+                        @*<li role="presentation"> <a href="~/Home/Index">Trang Chủ</a></li>
                         <li role="presentation"><a href="~/Home/GioiThieu">Giới thiệu</a></li>
 
                         <li role="presentation">
                             <a href="~/TypeCourses/Index">Chương trình đào tạo</a>
                             <ul class="sub-menu">
-                                
+
                                 <li role="presentation"> <a href="~/TypeCourses/XemThem?MaKH=1">Tiếng anh mầm non</a></li>
                                 <li role="presentation"><a href="~/TypeCourses/XemThem?MaKH=2">Tiếng anh thiếu nhi</a></li>
                                 <li role="presentation"> <a href="~/TypeCourses/XemThem?MaKH=3">Tiếng anh thiếu niên</a></li>
                                 <li role="presentation"><a href="~/TypeCourses/XemThem?MaKH=4">Tiếng anh người lớn</a></li>
                             </ul>
                         </li>
-
+                        <li role="presentation"><a href="/LichHoc">Lịch học</a></li>
                         <li role="presentation"><a href="~/Home/TinTucSuKien">Tin tức và sự kiện</a></li>
                         <li role="presentation"><a href="#footer">Liên hệ</a></li>
 
-                        <li role="presentation"><a href="~/Home/Index">Đăng nhập</a></li>
+                        <li role="presentation"><a href="~/User/Login">Đăng nhập</a></li>*@
+
+
 
                     </ul>
                 </div>
+
+
+
             </div>
         </div>
     </nav>
@@ -83,9 +92,9 @@
         <img src="~/Content/Client/img/2.jpg" />
         <img src="~/Content/Client/img/1.jpg" />
     </div>
-     
-    @RenderBody()
-
+    <div>
+        @RenderBody()
+    </div>
     <footer>
         <div class="inner-footer">
             <div class="container">
@@ -106,8 +115,6 @@
                     <div class="col-md-6 f-contact">
                         <h3 class="widgetheading">Bản Đồ</h3>
                         <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d979.9158781953467!2d106.68163591072708!3d10.760395074414829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1b7c3ed289%3A0xa06651894598e488!2zxJDhuqFpIEjhu41jIFPDoGkgR8Oybg!5e0!3m2!1svi!2s!4v1522918599300" width="600" height="250" frameborder="0" style="border:0" allowfullscreen></iframe></p>
-
-
                     </div>
                 </div>
             </div>
@@ -144,6 +151,7 @@
 
         </div>
     </footer>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-2.1.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -165,6 +173,6 @@
             });
         });
     </script>
-
+    @RenderSection("jsFooter", required: false)
 </body>
 </html>

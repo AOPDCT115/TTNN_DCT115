@@ -71,8 +71,8 @@
                             <h4>Học phí: @String.Format("{0:0,0}", item.Price) VNĐ</h4>
                             <h4>Lịch học: từ @item.DateStart đến @item.DateFinish</h4>
                             <h4>
-                                @Html.ActionLink("Đăng ký", "DangKy", new { @MaK = item.CourseID }) |
-                                @Html.ActionLink("Xem lịch học", "XemLichHoc", new { @MaK = item.CourseID })
+                                @Html.ActionLink("Đăng ký", "Register", "User") |
+                                @Html.ActionLink("Xem lịch học", "Index", "LichHoc")
                             </h4>
                        </div>
                     </div>

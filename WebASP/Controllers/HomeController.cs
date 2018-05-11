@@ -21,10 +21,11 @@ namespace WebASP.Controllers
             return View();
         }
 
-        public ActionResult ChuongTrinhDaoTao()
+        public ActionResult Chuongtrinhdaotao()
         {
             var list = db.TypeCourse.ToList();
-            return View(list);
+            ViewBag.chuongtrinhdaotao = db.TypeCourse.ToList();
+            return PartialView(list);
         }
 
         public ActionResult TinTucSuKien()
@@ -35,6 +36,11 @@ namespace WebASP.Controllers
         {
                 return View();
         }
-
+        public ActionResult Menu()
+        {
+            var list = db.Menu.ToList();
+            ViewBag.chuongtrinhdaotao1 = db.TypeCourse.ToList();
+            return PartialView(list);
+        }
     }
 }

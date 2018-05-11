@@ -10,8 +10,11 @@ namespace WebASP.Models
         public int ScheduleID { get; set; }
         public int ClassID { get; set; }
         public int Week { get; set; }
+        public string Day { get; set; }
         public string Dates { get; set; }
         public string Times { get; set; }
+        public string Status { get; set; }
+        
 
         public virtual Class Classes { get; set; }
     }
