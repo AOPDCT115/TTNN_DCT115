@@ -11,6 +11,7 @@ namespace WebASP.Models
         public int CourseID { get; set; }
         public int NumOfMem { get; set; }
         public string Introduce { get; set; }
+        public bool Status { get; set; }
 
         public virtual ICollection<Register> Registers { get; set; }
         public virtual ICollection<Schedule> Schedules { get; set; }

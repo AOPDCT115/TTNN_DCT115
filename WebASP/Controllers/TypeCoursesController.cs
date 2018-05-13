@@ -13,7 +13,7 @@ namespace WebASP.Controllers
 {
     public class TypeCoursesController : Controller
     {
-        private DataContext db = new DataContext();
+        private DataVTT db = new DataVTT();
 
         // GET: TypeCourses
         public ActionResult Index()

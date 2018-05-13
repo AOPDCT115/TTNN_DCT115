@@ -10,7 +10,7 @@ namespace WebASP.Controllers
 {
     public class LichHocController : Controller
     {
-        private DataContext db = new DataContext();
+        private DataVTT db = new DataVTT();
         // GET: LichHoc
         public ActionResult Index()
         {

@@ -7,6 +7,7 @@
     <title>Trung tâm ngoại ngữ TVV</title>
 
     <!-- Bootstrap -->
+
     <link href="~/Content/Client/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="~/Content/Client/css/animate.css">
     <link rel="stylesheet" href="~/Content/Client/css/font-awesome.min.css">
@@ -18,11 +19,20 @@
     <link href="~/Content/Client/css/style.css" rel="stylesheet">
 
     <!-- Chèn css js nivoslide -->
-
     <link href="~/Content/Client/NivoSlider/nivo-slider.css" rel="stylesheet" />
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Content/Client/NivoSlider/jquery.nivo.slider.js"></script>
     <script src="~/Content/Client/NivoSlider/jquery.nivo.slider.pack.js"></script>
+
+    <script src="~/Content/Client/js/jquery-2.1.1.min.js"></script>
+    <script src="~/Content/Client/js/bootstrap.min.js"></script>
+    <script src="~/Content/Client/js/wow.min.js"></script>
+    <script src="~/Content/Client/js/jquery.easing.1.3.js"></script>
+    <script src="~/Content/Client/js/jquery.isotope.min.js"></script>
+    <script src="~/Content/Client/js/jquery.bxslider.min.js"></script>
+    <script src="~/Content/Client/js/fliplightbox.min.js"></script>
+    <script src="~/Content/Client/js/functions.js"></script>
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -46,55 +56,33 @@
             </div>
 
             <div class="navbar-collapse collapse">
-               
+
                 <div class="menu">
                     <ul class="nav nav-tabs" role="tablist">
 
                         @{ Html.RenderAction("Menu", "Home");}
 
-                        @*<li role="presentation"> <a href="~/Home/Index">Trang Chủ</a></li>
-                        <li role="presentation"><a href="~/Home/GioiThieu">Giới thiệu</a></li>
-
-                        <li role="presentation">
-                            <a href="~/TypeCourses/Index">Chương trình đào tạo</a>
-                            <ul class="sub-menu">
-
-                                <li role="presentation"> <a href="~/TypeCourses/XemThem?MaKH=1">Tiếng anh mầm non</a></li>
-                                <li role="presentation"><a href="~/TypeCourses/XemThem?MaKH=2">Tiếng anh thiếu nhi</a></li>
-                                <li role="presentation"> <a href="~/TypeCourses/XemThem?MaKH=3">Tiếng anh thiếu niên</a></li>
-                                <li role="presentation"><a href="~/TypeCourses/XemThem?MaKH=4">Tiếng anh người lớn</a></li>
-                            </ul>
-                        </li>
-                        <li role="presentation"><a href="/LichHoc">Lịch học</a></li>
-                        <li role="presentation"><a href="~/Home/TinTucSuKien">Tin tức và sự kiện</a></li>
-                        <li role="presentation"><a href="#footer">Liên hệ</a></li>
-
-                        <li role="presentation"><a href="~/User/Login">Đăng nhập</a></li>*@
-
-
-
                     </ul>
                 </div>
-
-
-
             </div>
         </div>
     </nav>
 
-    @*slide anh*@
+    <section id="divMenuSlider">
+        <div id="slider" class="nivoSlider">
+            <a href="#"><img src="~/DataFeed/Img/01.jpg" /></a>
+            <a href="#"><img src="~/DataFeed/Img/01.jpg" /></a>
+            <a href="#"><img src="~/DataFeed/Img/01.jpg" /></a>
+        </div>
+        <div style="clear:both"></div>
+    </section>
+    <div class="row">
+        
+            @RenderBody()
+        
+    </div>
 
-    <div id="slider" class="nivoSlider">
-        @*Ảnh chuyển động trang chủ
-            <img src="~/Content/img/01.jpg" />
-        *@
-        <img src="~/Content/Client/img/01.jpg" />
-        <img src="~/Content/Client/img/2.jpg" />
-        <img src="~/Content/Client/img/1.jpg" />
-    </div>
-    <div>
-        @RenderBody()
-    </div>
+
     <footer>
         <div class="inner-footer">
             <div class="container">
@@ -164,15 +152,21 @@
     <script src="js/functions.js"></script>
     <script type="text/javascript">$('.portfolio').flipLightBox()</script>
 
+
+    @*Script Chạy nivoslider*@
     <script type="text/javascript">
         $(window).load(function () {
             $('#slider').nivoSlider({
                 controlNav: false,
-                prevText:'',
-                nextText:'',
+                pauseOnHover: true,
+                prevText: 'Prev',
+                nextText: 'Next',
+                randomStart: true,
             });
         });
     </script>
+
+
     @RenderSection("jsFooter", required: false)
 </body>
 </html>

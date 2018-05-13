@@ -14,7 +14,7 @@ namespace WebASP.Controllers
 {
     public class UserController : Controller
     {
-        private DataContext db = new DataContext();
+        private DataVTT db = new DataVTT();
         // GET: User
         [HttpGet]
         public ActionResult Register()

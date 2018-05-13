@@ -6,9 +6,9 @@ using WebASP.Models;
 
 namespace WebASP.DAL
 {
-    public class DataInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<DataContext>
+    public class DataInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<DataVTT>
     {
-        protected override void Seed(DataContext context)
+        protected override void Seed(DataVTT context)
         {
             
         }

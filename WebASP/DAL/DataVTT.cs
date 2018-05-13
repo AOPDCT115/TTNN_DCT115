@@ -8,7 +8,7 @@ using WebASP.Models;
 
 namespace WebASP.DAL
 {
-    public class DataContext : DbContext
+    public class DataVTT : DbContext
     {
         public DbSet<TypeCourse> TypeCourse { get; set; }
         public DbSet<Course> Course { get; set; }
@@ -23,6 +23,7 @@ namespace WebASP.DAL
         public DbSet<Role> Role { get; set; }
         public DbSet<Credential> Credential { get; set; }
         public DbSet<Feedback> Feedback { get; set; }
+        public DbSet<NewsEvents> NewsEvents { get; set; }
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{

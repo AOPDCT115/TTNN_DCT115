@@ -13,7 +13,7 @@ namespace WebASP.Models
         public string Day { get; set; }
         public string Dates { get; set; }
         public string Times { get; set; }
-        public string Status { get; set; }
+        public bool Status { get; set; }
         
 
         public virtual Class Classes { get; set; }

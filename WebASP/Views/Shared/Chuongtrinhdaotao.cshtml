@@ -7,10 +7,10 @@
 @{
     <div class="content">
         <div class="grid">
-           @foreach (var item in (List<TypeCourse>)ViewBag.chuongtrinhdaotao)
+            @foreach (var item in (List<TypeCourse>)ViewBag.chuongtrinhdaotao)
             {
                 <figure class="effect-zoe">
-                    <img src="@item.UrlImg" alt="img25" />
+                    <img src="~/@item.UrlImg" alt="img25" />
                     <figcaption>
                         <a href="~/TypeCourses/XemThem?MaKH=@item.TypeCourseID">a</a>
                         <h4>@item.TypeName</h4>
@@ -21,7 +21,7 @@
                         </p>
                     </figcaption>
                 </figure>
-           }
+            }
         </div>
     </div>
 }

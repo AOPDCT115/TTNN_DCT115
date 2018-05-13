@@ -166,8 +166,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ChuongTrinhDaoTaoController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ClassController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FeedBackController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsEventController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Common\CommonConstants.cs" />
@@ -181,8 +185,12 @@
     <Compile Include="Controllers\TypeCoursesController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAL\DataCon.cs" />
-    <Compile Include="DAL\DataContext.cs" />
+    <Compile Include="DAL\DataVTT.cs" />
     <Compile Include="DAL\DataInitializer.cs" />
+    <Compile Include="DAO\ChuongTrinhDaoTaoDAO.cs" />
+    <Compile Include="DAO\ClassDAO.cs" />
+    <Compile Include="DAO\FeedbackDAO.cs" />
+    <Compile Include="DAO\NewsEventDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -199,6 +207,7 @@
     <Compile Include="Models\Instructor.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\NewsEvents.cs" />
     <Compile Include="Models\ProvinceModel.cs" />
     <Compile Include="Models\Register.cs" />
     <Compile Include="Models\RegisterModel.cs" />
@@ -521,6 +530,21 @@
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
     <Content Include="Areas\Admin\Views\User\Index.cshtml" />
     <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ChuongTrinhDaoTao\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ChuongTrinhDaoTao\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ChuongTrinhDaoTao\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Class\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Class\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Class\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Class\LichHoc.cshtml" />
+    <Content Include="Areas\Admin\Views\Class\EditSch.cshtml" />
+    <Content Include="Areas\Admin\Views\Class\CreateSch.cshtml" />
+    <Content Include="Areas\Admin\Views\Class\LichHocAll.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsEvent\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsEvent\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsEvent\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\FeedBack\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\FeedBack\Edit.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

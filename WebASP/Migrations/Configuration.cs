@@ -7,7 +7,7 @@
     using System.Linq;
     using WebASP.Models;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<WebASP.DAL.DataContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<WebASP.DAL.DataVTT>
     {
         public Configuration()
         {
@@ -16,7 +16,7 @@
             ContextKey = "WebASP.DAL.DataContext";
         }
 
-        protected override void Seed(WebASP.DAL.DataContext context)
+        protected override void Seed(WebASP.DAL.DataVTT context)
         {
             
         }

@@ -9,7 +9,7 @@ namespace WebASP.Controllers
 {
     public class HomeController : Controller
     {
-        private DataContext db = new DataContext();
+        private DataVTT db = new DataVTT();
 
         public ActionResult Index()
         {

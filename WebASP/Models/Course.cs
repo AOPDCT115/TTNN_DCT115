@@ -8,20 +8,28 @@ namespace WebASP.Models
 {
     public class Course
     {
+        [Display(Name = "Mã khoá học")]
+        [Key]
         public int CourseID { get; set; }
-        public int  TypeCourseID { get; set; }
-        public string  Name { get; set; }
+        [Display(Name = "Chương trình đào tạo")]
+        public int TypeCourseID { get; set; }
+        [Display(Name = "Tên khoá học")]
+        public string Name { get; set; }
+        [Display(Name = "Học phí")]
         public Nullable<decimal> Price { get; set; }
+        [Display(Name = "Số bài học")]
         public int NumofLesson { get; set; }
+        [Display(Name = "Hình ảnh")]
         public string UrlImg { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{dd/MMM/yyyy}", ApplyFormatInEditMode = true)]
-        public Nullable<System.DateTime> DateStart { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public Nullable<System.DateTime> DateFinish { get; set; }
+        [Display(Name = "Ngày bắt đầu")]
+        public DateTime DateStart { get; set; }
+        [Display(Name = "Ngày kết thúc")]
+        public DateTime DateFinish { get; set; }
+        [Display(Name = "Mã giảm giá")]
         public int SaleID { get; set; }
-        public int Availeable { get; set; }
+        [Display(Name = "Trạng thái")]
+        public bool Available { get; set; }
+        [Display(Name = "Giới thiệu")]
         public string Introduce { get; set; }
 
         public virtual TypeCourse TypeCourses { get; set; }

@@ -11,7 +11,7 @@ namespace WebASP.DAO
 {
     public class UserDAO
     {
-        private DataContext db = new DataContext();
+        private DataVTT db = new DataVTT();
         public long Insert(Student entity)
         {
             db.Student.Add(entity);
@@ -134,7 +134,7 @@ namespace WebASP.DAO
                 db.SaveChanges();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //logging
                 return false;
