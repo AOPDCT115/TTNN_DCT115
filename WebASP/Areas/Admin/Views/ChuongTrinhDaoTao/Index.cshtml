@@ -1,7 +1,7 @@
 ﻿@model PagedList.IPagedList<WebASP.Models.Course>
 @using PagedList.Mvc;
 @section jsFooter{
-    <script src="/Content/admin/js/controller/courseController.js"></script>
+    <script src="~/Content/Admin/js/controller/courseController.js"></script>
 }
 <div class="row">
 
@@ -35,9 +35,9 @@
                             <tr>
 
                                 <th>Khoá học</th>
-                                <th>Chương trình đào tạo</th>
+                                <th>CTĐT</th>
                                 <th>Giá</th>
-                                <th>Số bài học</th>
+                                <th>Bài học</th>
                                 <th>Ngày bắt đầu</th>
                                 <th>Ngày kết thúc</th>
                                 <th>Giảm giá</th>
@@ -54,12 +54,12 @@
                                     <td>@item.TypeCourseID</td>
                                     <td>@item.Price</td>
                                     <td>@item.NumofLesson</td>
-                                    <td>@item.DateStart</td>
+                                    <td>@item.DateStart</td> 
                                     <td>@item.DateFinish</td>
                                     <td>@item.SaleID</td>
                                     <td><a href="#" class="btn-active" data-id="@item.CourseID">@Html.Raw(item.Available ? "<strong>Kích hoạt</strong>" : "Khoá")</a></td>
                                     <td>
-                                        <a href="/Admin/ChuongTrinhDaoTao/Edit/@item.CourseID">Sửa</a>
+                                        <a href="/Admin/ChuongTrinhDaoTao/Edit/@item.CourseID">Sửa</a>  
                                     </td>
                                 </tr>
                             }

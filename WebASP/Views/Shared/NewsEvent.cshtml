@@ -1,0 +1,18 @@
+﻿@using WebASP.Models
+
+@model List<NewsEvents>
+
+
+
+    @foreach (var item in Model)
+    {
+    <div class="col-md-4">
+        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+            <h3 style="background-image: url(../@item.UrlImg); height: 300px; "></h3>
+            <a href="/NewsEvent/XemThem/@item.NewsEventsID">@item.Title</a>
+            <div class="ficon">
+                <a href="/NewsEvent/XemThem/@item.NewsEventsID" class="btn btn-default" role="button">Xem thêm</a>
+            </div>
+        </div>
+    </div>
+    } 

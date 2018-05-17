@@ -1,0 +1,41 @@
+﻿@using WebASP.Models
+
+@model List<NewsEvents>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="text-center">
+                <h2>Tin tức và sự kiện</h2>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+
+@{
+    int i = 0;
+
+    <div class="container">
+        <div class="row">
+            <div class="box">
+
+                @foreach (var item in Model)
+            {
+                i++;
+                    <div class="col-md-4">
+                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <h3 style="background-image: url(../@item.UrlImg); height: 300px; "></h3>
+                            <a href="/NewsEvent/XemThem/@item.NewsEventsID">@item.Title</a>
+                        </div>
+                    </div>
+                    if (i % 3 == 0)
+                    {
+                        <div style="clear:both"></div>
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+}

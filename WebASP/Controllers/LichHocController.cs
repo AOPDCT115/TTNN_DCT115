@@ -30,7 +30,7 @@ namespace WebASP.Controllers
 
             var model = schedule.ToList();
             ViewBag.count = codekh;
-            ViewBag.schedule = schedule.ToList();
+            ViewBag.schedule = schedule.Where(x=>x.Status==true).ToList();
 
             return View();
         }

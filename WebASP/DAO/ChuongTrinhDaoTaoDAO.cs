@@ -17,9 +17,22 @@ namespace WebASP.DAO
             db.SaveChanges();
             return entity.CourseID;
         }
+
+        public long InsertSpecial(Special_TypeCourse entity)
+        {
+            db.Special_TypeCourse.Add(entity);
+            db.SaveChanges();
+            return entity.SpecialID;
+        }
+
         public Course ViewDetail(int id)
         {
             return db.Course.Find(id);
+        }
+
+        public Special_TypeCourse ViewDetailSpecial(int id)
+        {
+            return db.Special_TypeCourse.Find(id);
         }
         public IEnumerable<Course> ListAllPaging(string searchString, int page, int pageSize)
         {
@@ -31,6 +44,18 @@ namespace WebASP.DAO
 
             return model.OrderByDescending(x => x.DateStart).ToPagedList(page, pageSize);
         }
+
+        public IEnumerable<Special_TypeCourse> ListAllPagingSpecial(string searchString, int page, int pageSize)
+        {
+            IQueryable<Special_TypeCourse> model = db.Special_TypeCourse;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(x => x.SpecialName.Contains(searchString));
+            }
+
+            return model.OrderByDescending(x => x.TypeCourseID).ToPagedList(page, pageSize);
+        } 
+
         public bool Update(Course entity)
         {
             try
@@ -52,6 +77,42 @@ namespace WebASP.DAO
             catch (Exception)
             {
                 //logging
+                return false;
+            }
+
+        }
+        public bool UpdateSpeciall(Special_TypeCourse entity)
+        {
+            try
+            {
+                var ne = db.Special_TypeCourse.Find(entity.SpecialID);
+                ne.TypeCourseID = entity.TypeCourseID;
+                ne.SpecialName = entity.SpecialName;
+                ne.Content = entity.Content;
+                ne.UrlImg = entity.UrlImg;
+
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                //logging
+                return false;
+            }
+
+        }
+        public bool DeleteSpecial(Special_TypeCourse entity)
+        {
+            try
+            {
+                var ne = db.Special_TypeCourse.Find(entity.SpecialID);
+
+                db.Special_TypeCourse.Remove(ne);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
                 return false;
             }
 

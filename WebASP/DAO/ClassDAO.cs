@@ -34,26 +34,34 @@ namespace WebASP.DAO
         public IEnumerable<Class> ListAllPaging(string searchString, int page, int pageSize)
         {
             IQueryable<Class> model = db.Class;
-
-            if (!string.IsNullOrEmpty(searchString))
+            try
             {
-                
+                var searchStrings = Convert.ToInt64(searchString);
+                if (searchStrings != 0)
+                {
+                    model = model.Where(x => x.ClassID == searchStrings || x.CourseID == searchStrings);
+                }
+                return model.OrderByDescending(x => x.ClassID).ToPagedList(page, pageSize);
             }
-
-            return model.OrderByDescending(x => x.ClassID).ToPagedList(page, pageSize);
+            catch(Exception)
+            {
+                return model.OrderByDescending(x => x.ClassID).ToPagedList(page, pageSize);
+            }
         }
 
         public IEnumerable<Schedule> ListAllPagingSch(string searchString, int page, int pageSize)
         {
             IQueryable<Schedule> model = db.Schedule;
-
+            ;
             if (!string.IsNullOrEmpty(searchString))
             {
-                model = model.Where(x =>x.Day.Contains(searchString));
+                var classstudentidd = Convert.ToInt64(searchString);
+                model = model.Where(x =>x.Day.Contains(searchString)|| x.ClassID == classstudentidd);
             }
             
-            return model.OrderByDescending(x => x.ScheduleID).ToPagedList(page, pageSize);
+            return model.OrderByDescending(x => x.ClassID).ToPagedList(page, pageSize);
         }
+
         public bool Update(Class entity)
         {
             try
@@ -104,6 +112,13 @@ namespace WebASP.DAO
         public bool ChangeStatusSch(long id)
         {
             var ne = db.Schedule.Find(id);
+            ne.Status = !ne.Status;
+            db.SaveChanges();
+            return ne.Status;
+        }
+        public bool ChangeStatusStudent(long id)
+        {
+            var ne = db.Student.Find(id);
             ne.Status = !ne.Status;
             db.SaveChanges();
             return ne.Status;

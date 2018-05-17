@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -24,38 +25,44 @@ namespace WebASP.Areas.Admin.Controllers
 
             return View(model);
         }
-        [HasCredential(RoleID = "ADD_USER")]
+
         [HttpGet]
         public ActionResult Edit(int id)
         {
 
-            return View(db.NewsEvents.Find(id));
+            return View(db.Feedback.Find(id));
         }
 
         [HttpPost]
-        [HasCredential(RoleID = "EDIT_USER")]
-        //public ActionResult Edit(Feedback ne)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var dao = new FeedbackDAO();
+        public ActionResult Edit(Feedback ne)
+        {
+            try
+            {
+                string content = System.IO.File.ReadAllText(Server.MapPath("~/Content/Client/template/neworder.html"));
 
-        //        dao.SendMail(ne.Email, ne.Name, ne.Reply);
-        //        if (result)
-        //        {
-        //            ModelState.AddModelError("Gửi thành công", "success");
-        //            return RedirectToAction("Index", "Feedback");
-        //        }
-        //        else
-        //        {
-        //            ModelState.AddModelError("", "Gửi không thành công");
-        //        }
-        //    }
+                content = content.Replace("{{CustomerName}}", ne.Name);
+                content = content.Replace("{{Phone}}", ne.Phone);
+                content = content.Replace("{{Email}}", ne.Email);
+                content = content.Replace("{{Text}}", ne.Text);
+                content = content.Replace("{{Rely}}", ne.Reply);
+                var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
 
-        //    return View();
-        //}
+                new MailHelper().SendMail(ne.Email, "Trả lời phản hồi", content);
+
+                var dao = new FeedbackDAO();
+                var feedback = db.Feedback.Find(ne.FeedbackID);
+                ne.Status = !ne.Status;
+                db.SaveChanges();
+                
+            }
+            catch(Exception)
+            {
+                return Redirect("/a");
+            }
+            return RedirectToAction("Index", "FeedBack");
+        }
+
         [HttpPost]
-        [HasCredential(RoleID = "EDIT_USER")]
         public JsonResult ChangeStatus(long id)
         {
             var result = new FeedbackDAO().ChangeStatus(id);

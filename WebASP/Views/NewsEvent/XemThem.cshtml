@@ -1,0 +1,28 @@
+﻿@model WebASP.Models.NewsEvents
+
+@{
+    ViewBag.Title = "XemThem";
+}
+
+
+     
+<h3 class="text-center">
+    Tin tức và sự kiện
+</h3>      
+
+<div class="container">
+    <div class="row">
+        <div class="text-center">
+            <h3>
+                @Html.DisplayFor(model => model.Title)
+            </h3>
+        </div>
+                <p style="font-size: 16px; color: #000">
+                    @Html.DisplayFor(model => model.Content)
+                </p>
+
+    </div>
+    <div class="text-center">
+        <p style="background-image: url(../@Html.DisplayFor(model => model.UrlImg)); height: 300px; "></p>
+    </div>
+</div>

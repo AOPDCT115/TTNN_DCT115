@@ -2,7 +2,7 @@
 
 @using PagedList.Mvc;
 @section jsFooter{
-    <script src="/Content/admin/js/controller/courseController.js"></script>
+    <script src="/Content/Admin/js/controller/classController.js"></script>
 }
 <div class="row">
 
@@ -53,7 +53,10 @@
                                     <td><a href="#" class="btn-active" data-id="@item.ClassID">@Html.Raw(item.Status ? "<strong>Kích hoạt</strong>" : "Khoá")</a></td>
                                     <td>
                                         <a href="/Admin/Class/Edit/@item.ClassID">Sửa</a> |
-                                        @Html.ActionLink("Lịch học", "LichHoc", new { @classid = item.ClassID })
+                                        @Html.ActionLink("Lịch học", "LichHoc", new { @classid = item.ClassID }) |
+
+                                        @*<a href="/Admin/Class/ShowStudent?classid=1"/>*@
+                                        @Html.ActionLink("Xem học viên", "ShowStudent", new { @classstudentid = item.ClassID })
                                     </td>
                                 </tr>
                             }

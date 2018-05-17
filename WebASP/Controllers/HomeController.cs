@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebASP.DAL;
+using WebASP.Models;
 
 namespace WebASP.Controllers
 {
@@ -41,6 +42,11 @@ namespace WebASP.Controllers
             var list = db.Menu.ToList();
             ViewBag.chuongtrinhdaotao1 = db.TypeCourse.ToList();
             return PartialView(list);
+        }
+        public ActionResult NewsEvent()
+        {
+            var newsevent = db.NewsEvents.Take(3).ToList();
+                return PartialView(newsevent);
         }
     }
 }

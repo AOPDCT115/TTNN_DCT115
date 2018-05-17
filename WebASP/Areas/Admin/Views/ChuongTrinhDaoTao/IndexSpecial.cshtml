@@ -1,0 +1,73 @@
+﻿@model PagedList.IPagedList<WebASP.Models.Special_TypeCourse>
+@using PagedList.Mvc;
+@section jsFooter{
+    <script src="~/Content/Admin/js/controller/courseController.js"></script>
+}
+<div class="row">
+
+    <div class="col-lg-12">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Các đặc điểm nổi bật của chương trình
+            </div>
+
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                @using (Html.BeginForm("IndexSpecial", "ChuongTrinhDaoTao", FormMethod.Get))
+                {
+                    <div class="row form-group">
+                        <div class="col-lg-12">
+                            <div class="col-md-4">
+                                <input type="text" value="@ViewBag.SearchString" class="form-control" name="searchString" />
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-success">Tìm kiếm</button>
+                                <a class="btn btn-primary" href="/Admin/ChuongTrinhDaoTao/CreateSpecial">Thêm mới</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+
+                                <th> </th>
+                                <th>CTDT</th>
+                                <th>Tên đặc điểm</th>
+                                <th>Nội dung</th>
+                                <th>Hình ảnh</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr id="row_@item.SpecialID">
+
+                                    <td>@item.SpecialID</td>
+                                    <td>@item.TypeCourseID</td>
+                                    <td>@item.SpecialName</td>
+                                    <td>@item.Content</td>
+                                    <td>@item.UrlImg</td>
+                                    
+                                    <td>
+                                        <a href="/Admin/ChuongTrinhDaoTao/EditSpecial/@item.SpecialID">Sửa</a> |
+
+                                        <a href="/Admin/ChuongTrinhDaoTao/Delete/@item.SpecialID">Xoá</a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                    @Html.PagedListPager(Model, page => Url.Action("IndexSpecial", new { page, @searchString = @ViewBag.SearchString }))
+                </div>
+                <!-- /.table-responsive -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+</div>
