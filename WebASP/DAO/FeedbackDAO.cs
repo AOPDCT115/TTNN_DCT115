@@ -53,5 +53,11 @@ namespace WebASP.DAO
             db.SaveChanges();
             return ne.Status;
         }
+        public long Insert(Feedback entity)
+        {
+            db.Feedback.Add(entity);
+            db.SaveChanges();
+            return entity.FeedbackID;
+        }
     }
 }

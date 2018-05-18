@@ -1335,6 +1335,7 @@
     <Content Include="Content\Client\css\overwrite.css" />
     <Content Include="Content\Client\css\set1.css" />
     <Content Include="Content\Client\css\set2.css" />
+    <Content Include="Content\Client\css\Slideshow.css" />
     <Content Include="Content\Client\css\style.css" />
     <Content Include="Content\Client\Data\Provinces_Data.xml" />
     <Content Include="Content\Client\fonts\feathericons\feathericons.svg" />
@@ -1420,9 +1421,24 @@
     <Content Include="Content\Client\nivo-slider\nivo-slider\themes\light\loading.gif" />
     <Content Include="Content\Client\template\neworder.html" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="DataFeed\Anh\20161104155430-2.jpg" />
+    <Content Include="DataFeed\Anh\3000-tu-ving-tieng-anh-thong-dung-nhat-cua-oxford.png" />
+    <Content Include="DataFeed\Anh\article_1507297329_59d78831213229.33518990.jpeg" />
+    <Content Include="DataFeed\Anh\Captura-de-pantalla-2017-06-08-a-las-19.17.50.png" />
+    <Content Include="DataFeed\Anh\giam-chi-phi-luyen-thi-ielts-nho-hoc-tieng-anh-online.jpg" />
+    <Content Include="DataFeed\Anh\hoc-tieng-anh-2-1495689909213.jpg" />
+    <Content Include="DataFeed\Anh\hoc-tieng-anh-giao-tiep-ky-nang-giao-tiep.jpg" />
+    <Content Include="DataFeed\Anh\image001_7.jpg" />
+    <Content Include="DataFeed\Anh\images1111.jpg" />
+    <Content Include="DataFeed\Anh\imagesssa.jpg" />
+    <Content Include="DataFeed\Anh\images.jpg" />
+    <Content Include="DataFeed\Anh\images.png" />
+    <Content Include="DataFeed\Anh\teaching-english-to-children-ohay-tv-56104.jpeg" />
+    <Content Include="DataFeed\Anh\tieng-anh-cho-tre-mau-giao-2015-191-3.jpg" />
+    <Content Include="DataFeed\Anh\tieng-anh-tieu-hoc-3.png" />
+    <Content Include="DataFeed\Anh\trung-tam-ngoai-ngu-o-ha-noi.jpg" />
     <Content Include="DataFeed\img\01.jpg" />
     <Content Include="DataFeed\img\1.jpg" />
-    <Content Include="DataFeed\img\10.jpg" />
     <Content Include="DataFeed\img\11.jpg" />
     <Content Include="DataFeed\img\12.jpg" />
     <Content Include="DataFeed\img\13.jpg" />
@@ -1455,11 +1471,13 @@
     <Content Include="DataFeed\img\8.jpg" />
     <Content Include="DataFeed\img\9.jpg" />
     <Content Include="DataFeed\img\a.jpg" />
+    <Content Include="DataFeed\img\am.png" />
     <Content Include="DataFeed\img\b.jpg" />
     <Content Include="DataFeed\img\c.jpg" />
     <Content Include="DataFeed\img\d.jpg" />
     <Content Include="DataFeed\img\triangle.svg" />
     <Content Include="DataFeed\img\triangle2.svg" />
+    <Content Include="DataFeed\img\trung-tam-ngoai-ngu-o-ha-noi.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1628,6 +1646,10 @@
     <Content Include="Views\NewsEvent\Index.cshtml" />
     <Content Include="Views\NewsEvent\XemThem.cshtml" />
     <Content Include="Views\Shared\NewsEvent.cshtml" />
+    <Content Include="Views\Shared\SlideShow.cshtml" />
+    <Content Include="Views\Shared\FeedBack.cshtml" />
+    <Content Include="Views\Home\Feedback.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

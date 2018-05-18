@@ -98,6 +98,8 @@ namespace WebASP.Controllers
                     user.Mail = model.Email;
                     user.Address = model.Address;
                     user.CreatedDate = DateTime.Now;
+                    user.Gender = 0;
+                    user.GroupID = "MEMBER";
                     user.Status = true;
                     if (!string.IsNullOrEmpty(model.ProvinceID))
                     {

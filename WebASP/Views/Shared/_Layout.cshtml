@@ -35,7 +35,7 @@
     <script src="~/Content/Client/js/fliplightbox.min.js" type="text/javascript"></script>
     <script src="~/Content/Client/js/functions.js"></script>
 
-
+    <link href="~/Content/Client/css/Slideshow.css" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -70,34 +70,84 @@
             </div>
         </div>
     </nav>
-
-    <section id="divMenuSlider">
-        <div id="slider" class="nivoSlider">
-            <a href="#"><img src="~/DataFeed/Img/01.jpg" /></a>
-            <a href="#"><img src="~/DataFeed/Img/01.jpg" /></a>
-            <a href="#"><img src="~/DataFeed/Img/01.jpg" /></a>
-        </div>
-        <div style="clear:both"></div>
-    </section>
     <div class="row">
+
         
+    </div>
+
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="~/DataFeed/Anh/images.jpg" style="width:100%"/>
+
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="~/DataFeed/Anh/article_1507297329_59d78831213229.33518990.jpeg" style="width:100%">
+
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="~/DataFeed/Anh/Captura-de-pantalla-2017-06-08-a-las-19.17.50.png" style="width:100%" />
+
+            </div>
+
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+    <script>
+            var slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1 }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                setTimeout(showSlides, 5000); // Change image every 2 seconds
+            }
+    </script>
+
+    <div class="row">
+
             @RenderBody()
-        
     </div>
 
 
     <footer>
         <div class="inner-footer">
             <div class="container">
+
                 <div class="row">
+
                     <div class="col-md-6 f-about">
-                        <div>
-                            <a href="index.html"><h1>Thông tin liên hệ</h1></a>
+                        <div >
+                            <h3 class="widgetheading">Thông tin liện hệ</h3>
                             <p>
-                                Thông tin liên hệ:<br /><br />
                                 -273 An Dương Vương - Phường 3 - Quận 5 - Thành phố Hồ Chí Minh<br />
-                                -...<br />
-                                -...<br />
+                                -VTT Trương Định 47 - 49 Trương Định, P.6, Q.3028 7306 9966<br />
+                                -VTT Ba Tháng Hai 612A Ba Tháng Hai, P.14, Q.10028 7300 7147<br />
+                                -VTT Nguyễn Văn Cừ 165 Nguyễn Văn Cừ, P.2, Q.5028 7300 7638<br />
+                                -VTT Phan Đăng Lưu 195 - 197 Phan Đăng Lưu, P.1, Q.Phú Nhuận028 7300 3226<br />
+                                
 
                             </p>
                         </div>
@@ -108,6 +158,7 @@
                         <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d979.9158781953467!2d106.68163591072708!3d10.760395074414829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1b7c3ed289%3A0xa06651894598e488!2zxJDhuqFpIEjhu41jIFPDoGkgR8Oybg!5e0!3m2!1svi!2s!4v1522918599300" width="600" height="250" frameborder="0" style="border:0" allowfullscreen></iframe></p>
                     </div>
                 </div>
+
             </div>
         </div>
 
@@ -147,7 +198,7 @@
 
 
     @*Script Chạy nivoslider*@
-    <script type="text/javascript">
+    @*<script type="text/javascript">
         $(window).load(function () {
             $('#slider').nivoSlider({
                 controlNav: false,
@@ -157,7 +208,7 @@
                 randomStart: true,
             });
         });
-    </script>
+    </script>*@
 
 
     @RenderSection("jsFooter", required: false)

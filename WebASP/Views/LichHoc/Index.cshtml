@@ -13,11 +13,11 @@
         @using (Ajax.BeginForm("Index", "LichHoc", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "divResult", InsertionMode = InsertionMode.Replace, LoadingElementId = "loadingElement" }))
         {
             <div class="section group">
-                <div class="col-md-2 col-md-offset-4">
-                    @Html.DropDownList("khoahoc", ViewBag.khoahoc as SelectList,"CÁC KHOÁ HỌC", new { style = "width:auto ; margin-left:12px; height:45px", @khoahoc = ViewBag.count })
-                    
+                <div class="col-md-2 col-md-offset-2">
+                    @Html.DropDownList("khoahoc", ViewBag.khoahoc as SelectList, new { style = "width:auto ; margin-left:12px; height:45px", selectedIndex = ViewBag.count})
+
                 </div>
-                <div class="col-md-4 col-md-offset-1">
+                <div class="col-md-4 col-md-offset-2">
                     <button type="submit" style="width:250px ; margin-left:12px;height:45px">Tìm hiểu thêm</button>
                 </div>
             </div>
@@ -36,12 +36,13 @@ else
             <table class="table">
                 <thead>
                     <tr>
-                        <td>MÃ SỐ LỚP</td>
-                        <td>TỔNG SỐ TUẦN</td>
-                        <td>NGÀY HỌC</td>
-                        <td>THỜI GIAN</td>
-                        <td>NGÀY KHAI GIẢNG</td>
-                        <td>TRẠNG THÁI</td>
+
+                        <td>Mã lớp</td>
+                        <td>Số tuần</td>
+                        <td>Ngày học</td>
+                        <td>Thời gian</td>
+                        <td>Ngày khai giảng</td>
+                        <td>Trạng thái</td>
                         <td></td>
                     </tr>
                 </thead>
@@ -49,6 +50,7 @@ else
                     @foreach (var item in (List<Schedule>)ViewBag.schedule)
                     {
                         <tr>
+
                             <td>@item.ClassID</td>
                             <td>@item.Week</td>
                             <td>@item.Day</td>

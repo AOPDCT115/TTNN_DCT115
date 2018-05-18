@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebASP.DAL;
+using WebASP.DAO;
 using WebASP.Models;
 
 namespace WebASP.Controllers
@@ -48,5 +49,30 @@ namespace WebASP.Controllers
             var newsevent = db.NewsEvents.Take(3).ToList();
                 return PartialView(newsevent);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Feedback(Feedback ne)
+        {
+            if (ModelState.IsValid)
+            {
+                ne.Status = true;
+                var dao = new FeedbackDAO();
+
+                long id = dao.Insert(ne);
+
+                if (id > 0)
+                {
+                    ModelState.AddModelError("Thêm thành công", "success");
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Thêm không thành công");
+                }
+            }
+            return View(ne);
+        }
+
     }
 }

@@ -23,8 +23,6 @@ namespace WebASP.Areas.Admin.Controllers
 
         public ActionResult TrangTongQuat()
         {
-            
-
             return View();
         }
     }

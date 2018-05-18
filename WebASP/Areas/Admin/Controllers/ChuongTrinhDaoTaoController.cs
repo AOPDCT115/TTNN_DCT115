@@ -37,7 +37,7 @@ namespace WebASP.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            SetViewBag(db.TypeCourse.Find(id).TypeCourseID);
+            SetViewBag(db.Course.Find(id).TypeCourseID);
             return View(db.Course.Find(id));
         }
         [HttpGet]

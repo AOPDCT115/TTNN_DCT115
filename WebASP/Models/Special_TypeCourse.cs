@@ -19,7 +19,7 @@ namespace WebASP.Models
         public string SpecialName { get; set; }
         [Display(Name = "Nội dung")]
         public string Content { get; set; }
-        [Display(Name = "Tình trạng")]
+        [Display(Name = "Chọn ảnh")]
         public string UrlImg { get; set; }
 
         public virtual TypeCourse TypeCourses { get; set; }

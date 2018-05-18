@@ -12,8 +12,10 @@ namespace WebASP.Models
         public int ClassID { get; set; }
         [Display(Name = "Khoá học")]
         public int CourseID { get; set; }
-        [Display(Name = "Số lượng học viên")]
+        [Display(Name = "Sĩ số")]
         public int NumOfMem { get; set; }
+        [Display(Name = "Còn lại")]
+        public int CurrentMem { get; set; }
         [Display(Name = "Giới thiệu")]
         public string Introduce { get; set; }
         [Display(Name = "Tình trạng")]

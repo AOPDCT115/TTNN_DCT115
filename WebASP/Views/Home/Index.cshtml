@@ -7,11 +7,11 @@
                     TẠI SAO CHỌN TVV
                 </h2>
                 <hr />
-                <p style="color: white; font-size: 24px;">
+                <p style="color: white; font-size: 16px; line-height: 1.5;">
                     Đã có ai nói với bạn như thế này chưa: học tiếng anh giao tiếp giống hệt một đứa trẻ tập nói, nó tập kỹ năng nghe đầu tiên bằng cách nghe từ người lớn, sau đó mới học kỹ năng nói hay gọi là nhại lại.
                 </p>
 
-                <p style="color: white; font-size: 24px;">
+                <p style="color: white; font-size: 16px; line-height: 1.5;">
                     Nhưng chúng ta lại không được học như thế. Bắt đầu chúng ta đã bị nhét vào đầu một đống ngữ pháp: danh từ, động từ, tính từ rồi hiện tại đơn, hiện tại tiếp diễn… đó là nguyên nhân mà chúng ta mất khả năng nghe từ đầu.
                     Tiếp theo là việc chúng ta tiếp cận ngay với việc phát âm sai của nhiều giáo viên. Chúng ta thường đánh vần tiếng Anh giống hệt tiếng Việt.
 
@@ -51,3 +51,26 @@
     </div>
 </div>
 @{ Html.RenderAction("Chuongtrinhdaotao", "Home");}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <hr style="border-top-width: 10px; border-top-color: red" />
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="text-center">
+                <p style="background-image: url('../../DataFeed/img/trung-tam-ngoai-ngu-o-ha-noi.jpg'); height: 300px; "></p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="text-center">
+                <h2>Phản hồi</h2>
+            </div>
+            @RenderPage("~/Views/Shared/_Footer.cshtml")
+        </div>
+        <hr />
+    </div>
+</div>

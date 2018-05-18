@@ -31,7 +31,7 @@ namespace WebASP.Areas.Admin.Controllers
                     userSession.UserID = user.StudentID;
                     userSession.GroupID = user.GroupID;
                     var listCredentials = dao.GetListCredential(model.UserName);
-
+                    
                     Session.Add(CommonConstants.SESSION_CREDENTIALS, listCredentials);
                     Session.Add(CommonConstants.USER_SESSION, userSession);
                     return RedirectToAction("Index", "Home");
