@@ -184,6 +184,7 @@
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LichHocController.cs" />
+    <Compile Include="Controllers\LichHocUserController.cs" />
     <Compile Include="Controllers\NewsEventController.cs" />
     <Compile Include="Controllers\TypeCoursesController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -1650,6 +1651,7 @@
     <Content Include="Views\Shared\FeedBack.cshtml" />
     <Content Include="Views\Home\Feedback.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\LichHocUser\XemmThoiKhoaBieu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

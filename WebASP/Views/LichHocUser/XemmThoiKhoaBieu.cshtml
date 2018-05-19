@@ -1,0 +1,46 @@
+﻿@using WebASP.Models
+@model WebASP.Models.Schedule
+@*using WebASP.Common;
+using WebASP.DAL;*@
+
+
+@if (((List<Schedule>)ViewBag.schedule).Count == 0)
+{
+    <div>Chưa đăng kí khóa học</div>
+}
+else
+{
+    <div class="content">
+
+        <div style="text-align: center; font-size: 24px;"><b>Thời Khóa Biểu </b></div>
+    </div>
+    <div class="content">
+        <div class="section group">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td><b>MÃ SỐ LỚP</b></td>
+                        <td><b>TỔNG SỐ TUẦN</b></td>
+                        <td><b>NGÀY HỌC</b></td>
+                        <td><b>THỜI GIAN</b></td>
+                        <td><b>NGÀY KHAI GIẢNG</b></td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in (List<Schedule>)ViewBag.schedule)
+                    {
+                        <tr>
+                            <td>@item.ClassID</td>
+                            <td>@item.Week</td>
+                            <td>@item.Day</td>
+                            <td>@item.Times</td>
+                            <td>@item.Dates</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
